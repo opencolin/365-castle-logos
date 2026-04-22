@@ -876,6 +876,15 @@ document.querySelector('.search-input').addEventListener('input', (e) => {
   render();
 });
 
+// All Castles button — clears search and resets sort to show everything
+document.getElementById('all-castles-btn').addEventListener('click', () => {
+  searchQuery = '';
+  document.querySelector('.search-input').value = '';
+  document.getElementById('all-castles-btn').textContent = `All Castles (${LOGOS.length})`;
+  render();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
 // Dark mode toggle
 (function () {
   const t = document.querySelector('[data-theme-toggle]');
@@ -966,6 +975,8 @@ let editPolls = {};
 
 // ===== INIT =====
 // Show a placeholder render immediately, then load real data from Supabase
+document.getElementById('stat-total').textContent = LOGOS.length;
+document.getElementById('all-castles-btn').textContent = `All Castles (${LOGOS.length})`;
 render();
 updateStats();
 loadVotesFromSupabase();
