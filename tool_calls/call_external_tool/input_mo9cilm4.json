@@ -1,0 +1,10 @@
+{
+  "user_description": "Creating votes table in Supabase",
+  "tool_name": "apply_migration",
+  "source_id": "supabase",
+  "arguments": {
+    "project_id": "mrnccntqmkxjazznejfc",
+    "name": "create_castle_votes",
+    "query": "-- Aggregate vote counts per logo\nCREATE TABLE IF NOT EXISTS castle_votes (\n  logo_id INTEGER PRIMARY KEY,\n  up_votes INTEGER NOT NULL DEFAULT 0,\n  down_votes INTEGER NOT NULL DEFAULT 0,\n  updated_at TIMESTAMPTZ NOT NULL DEFAULT now()\n);\n\n-- Pre-populate all 365 logos with zero votes\nINSERT INTO castle_votes (logo_id)\nSELECT generate_series(1, 365)\nON CONFLICT (logo_id) DO NOTHING;\n\n-- Per-visitor vote tracking (using anonymous session ID)\nCREATE TABLE IF NOT EXISTS castle_user_votes (\n  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n  logo_id INTEGER NOT NULL REFERENCES castle_votes(logo_id),\n  session_id TEXT NOT NULL,\n  direction TEXT NOT NULL CHECK (direction IN ('up', 'down')),\n  created_at TIMESTAMPTZ NOT NULL DEFAULT now(),\n  UNIQUE(logo_id, session_id)\n);\n\n-- Enable RLS\nALTER TABLE castle_votes ENABLE ROW LEVEL SECURITY;\nALTER TABLE castle_user_votes ENABLE ROW LEVEL SECURITY;\n\n-- Allow anyone to read vote counts\nCREATE POLICY \"public read votes\" ON castle_votes FOR SELECT USING (true);\n\n-- Allow anyone to read/write their own session votes\nCREATE POLICY \"public read user votes\" ON castle_user_votes FOR SELECT USING (true);\nCREATE POLICY \"public insert user votes\" ON castle_user_votes FOR INSERT WITH CHECK (true);\nCREATE POLICY \"public update user votes\" ON castle_user_votes FOR UPDATE USING (true);\nCREATE POLICY \"public delete user votes\" ON castle_user_votes FOR DELETE USING (true);\n\n-- Allow anyone to update aggregate counts\nCREATE POLICY \"public update votes\" ON castle_votes FOR UPDATE USING (true);"
+  }
+}

@@ -1,0 +1,3 @@
+{
+  "error": "{\"error\":{\"name\":\"HttpException\",\"message\":\"Failed to apply database migration: ERROR:  42601: syntax error at or near \\\"NOT\\\"\\nLINE 11: CREATE POLICY IF NOT EXISTS \\\"Public delete castle_edits\\\" ON castle_edits FOR DELETE USING (true);;\\n                          ^\\n\"}}"
+}

@@ -1,0 +1,6 @@
+{
+  "user_description": "Listing Supabase projects",
+  "tool_name": "list_projects",
+  "source_id": "supabase",
+  "arguments": {}
+}

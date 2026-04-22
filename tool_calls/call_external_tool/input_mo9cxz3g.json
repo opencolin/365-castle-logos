@@ -1,0 +1,9 @@
+{
+  "user_description": "Checking castle_votes table contents",
+  "tool_name": "execute_sql",
+  "source_id": "supabase",
+  "arguments": {
+    "project_id": "mrnccntqmkxjazznejfc",
+    "query": "SELECT logo_id, up_votes, down_votes, updated_at FROM castle_votes WHERE up_votes > 0 OR down_votes > 0 ORDER BY up_votes DESC LIMIT 20;"
+  }
+}

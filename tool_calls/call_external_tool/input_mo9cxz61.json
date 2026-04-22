@@ -1,0 +1,9 @@
+{
+  "user_description": "Checking castle_user_votes table contents",
+  "tool_name": "execute_sql",
+  "source_id": "supabase",
+  "arguments": {
+    "project_id": "mrnccntqmkxjazznejfc",
+    "query": "SELECT * FROM castle_user_votes LIMIT 20;"
+  }
+}

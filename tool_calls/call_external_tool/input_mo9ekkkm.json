@@ -1,0 +1,10 @@
+{
+  "user_description": "Adding status and result columns to castle_edits for job queue pattern",
+  "tool_name": "apply_migration",
+  "source_id": "supabase",
+  "arguments": {
+    "project_id": "mrnccntqmkxjazznejfc",
+    "name": "add_edit_job_queue_fields",
+    "query": "ALTER TABLE castle_edits ADD COLUMN IF NOT EXISTS status TEXT NOT NULL DEFAULT 'pending' CHECK (status IN ('pending', 'processing', 'done', 'error'));\nALTER TABLE castle_edits ADD COLUMN IF NOT EXISTS error_msg TEXT;\n-- image_data_url can be null while pending\nALTER TABLE castle_edits ALTER COLUMN image_data_url DROP NOT NULL;\nALTER TABLE castle_edits ALTER COLUMN image_data_url SET DEFAULT NULL;\n\n-- Policy for delete so worker can clean up\nCREATE POLICY IF NOT EXISTS \"Public delete castle_edits\" ON castle_edits FOR DELETE USING (true);"
+  }
+}

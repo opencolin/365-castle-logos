@@ -1,0 +1,10 @@
+{
+  "user_description": "Creating atomic adjust_votes RPC function in Supabase",
+  "tool_name": "apply_migration",
+  "source_id": "supabase",
+  "arguments": {
+    "project_id": "mrnccntqmkxjazznejfc",
+    "name": "add_adjust_votes_rpc",
+    "query": "CREATE OR REPLACE FUNCTION adjust_votes(p_logo_id INTEGER, p_up_delta INTEGER, p_down_delta INTEGER)\nRETURNS void\nLANGUAGE plpgsql\nSECURITY DEFINER\nAS $$\nBEGIN\n  UPDATE castle_votes\n  SET\n    up_votes   = GREATEST(0, up_votes   + p_up_delta),\n    down_votes = GREATEST(0, down_votes + p_down_delta),\n    updated_at = NOW()\n  WHERE logo_id = p_logo_id;\nEND;\n$$;\n\nGRANT EXECUTE ON FUNCTION adjust_votes(INTEGER, INTEGER, INTEGER) TO anon, authenticated;"
+  }
+}

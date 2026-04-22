@@ -827,3 +827,452 @@ document.addEventListener('keydown', (e) => {
 render();
 updateStats();
 loadVotesFromSupabase();
+
+// =====================================================================
+// ===== AI EDIT FEATURE =====
+// =====================================================================
+
+const VERCEL_EDIT_API = '/api/edit';
+
+// In-memory store for AI-edited cards: { editId -> { parentId, prompt, imageDataUrl, up, down, userVote } }
+let editCards = {};
+
+// Poll handles: { editId -> intervalId }
+let editPolls = {};
+
+// ===== LOAD EXISTING EDITS FROM SUPABASE =====
+async function loadEditsFromSupabase() {
+  try {
+    const { data, error } = await sb
+      .from('castle_edits')
+      .select('id, parent_logo_id, prompt, image_data_url, up_votes, down_votes, status, created_at')
+      .eq('status', 'done')
+      .order('created_at', { ascending: false });
+
+    if (error) throw error;
+
+    // Load user votes for these edits
+    const editIds = data.map(e => e.id);
+    let userVoteMap = {};
+    if (editIds.length > 0) {
+      const { data: uvData } = await sb
+        .from('castle_edit_user_votes')
+        .select('edit_id, direction')
+        .eq('session_id', SESSION_ID)
+        .in('edit_id', editIds);
+      (uvData || []).forEach(r => { userVoteMap[r.edit_id] = r.direction; });
+    }
+
+    data.forEach(e => {
+      editCards[e.id] = {
+        id: e.id,
+        parentId: e.parent_logo_id,
+        prompt: e.prompt,
+        imageDataUrl: e.image_data_url,
+        up: e.up_votes || 0,
+        down: e.down_votes || 0,
+        userVote: userVoteMap[e.id] || null,
+        status: 'done',
+      };
+    });
+
+    if (data.length > 0) renderEditCards();
+  } catch (err) {
+    console.warn('Failed to load edits:', err);
+  }
+}
+
+// ===== RENDER EDIT CARDS =====
+function renderEditCards() {
+  const grid = document.getElementById('logo-grid');
+  Object.values(editCards).forEach(edit => {
+    const existingCard = document.getElementById(`edit-card-${edit.id}`);
+    if (existingCard) {
+      updateEditCard(edit.id);
+      return;
+    }
+    if (edit.status !== 'done' || !edit.imageDataUrl) return;
+    const card = createEditCard(edit);
+    // Insert after the parent card if possible
+    const parentCard = document.getElementById(`card-${edit.parentId}`);
+    if (parentCard && parentCard.nextSibling) {
+      grid.insertBefore(card, parentCard.nextSibling);
+    } else {
+      grid.appendChild(card);
+    }
+  });
+}
+
+function createEditCard(edit) {
+  const score = edit.up - edit.down;
+  const card = document.createElement('article');
+  card.className = 'logo-card';
+  card.id = `edit-card-${edit.id}`;
+  card.setAttribute('role', 'listitem');
+  card.setAttribute('aria-label', `AI Edit of logo ${edit.parentId}`);
+  card.style.position = 'relative';
+
+  const parentLogo = LOGOS.find(l => l.id === edit.parentId);
+  const parentLabel = parentLogo ? parentLogo.label : `Logo #${edit.parentId}`;
+
+  card.innerHTML = `
+    <span class="ai-badge">✦ AI Edit</span>
+    <div class="logo-img-wrap" style="cursor:pointer">
+      <img class="logo-img" src="${edit.imageDataUrl}" alt="AI edit of ${parentLabel}" loading="lazy" />
+    </div>
+    <div class="logo-body">
+      <p class="logo-label">${parentLabel}</p>
+      <p class="edit-prompt-tag" title="${edit.prompt}">"${edit.prompt}"</p>
+      <div class="vote-row">
+        <button class="vote-btn vote-up${edit.userVote === 'up' ? ' voted' : ''}" data-edit-id="${edit.id}" data-dir="up" aria-label="Upvote edit">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+          ${edit.up}
+        </button>
+        <span class="score${score > 0 ? ' positive' : score < 0 ? ' negative' : ''}">${score > 0 ? '+' : ''}${score}</span>
+        <button class="vote-btn vote-down${edit.userVote === 'down' ? ' voted' : ''}" data-edit-id="${edit.id}" data-dir="down" aria-label="Downvote edit">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+          ${edit.down}
+        </button>
+      </div>
+      <button class="edit-btn" data-logo-id="${edit.parentId}">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        Edit again
+      </button>
+    </div>
+  `;
+
+  // Vote buttons
+  card.querySelectorAll('.vote-btn[data-edit-id]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      castEditVote(edit.id, btn.dataset.dir);
+      btn.classList.add('pulse');
+      btn.addEventListener('animationend', () => btn.classList.remove('pulse'), { once: true });
+    });
+  });
+
+  // Edit again button
+  card.querySelector('.edit-btn').addEventListener('click', e => {
+    e.stopPropagation();
+    openEditModal(parseInt(btn.dataset.logoId), edit.imageDataUrl);
+  });
+
+  // Lightbox on image click
+  card.querySelector('.logo-img-wrap').addEventListener('click', () => {
+    openEditLightbox(edit);
+  });
+
+  return card;
+}
+
+function updateEditCard(editId) {
+  const edit = editCards[editId];
+  if (!edit) return;
+  const card = document.getElementById(`edit-card-${editId}`);
+  if (!card) return;
+  const score = edit.up - edit.down;
+  const upBtn = card.querySelector('.vote-up');
+  const downBtn = card.querySelector('.vote-down');
+  const scoreEl = card.querySelector('.score');
+  if (upBtn) {
+    upBtn.classList.toggle('voted', edit.userVote === 'up');
+    upBtn.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 19V5M5 12l7-7 7 7"/></svg>${edit.up}`;
+  }
+  if (downBtn) {
+    downBtn.classList.toggle('voted', edit.userVote === 'down');
+    downBtn.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>${edit.down}`;
+  }
+  if (scoreEl) {
+    scoreEl.textContent = (score > 0 ? '+' : '') + score;
+    scoreEl.className = 'score' + (score > 0 ? ' positive' : score < 0 ? ' negative' : '');
+  }
+}
+
+// ===== EDIT VOTING =====
+async function castEditVote(editId, dir) {
+  const edit = editCards[editId];
+  if (!edit) return;
+  const wasVote = edit.userVote;
+  const isSameDir = wasVote === dir;
+
+  // Optimistic update
+  if (isSameDir) {
+    edit[dir]--;
+    edit.userVote = null;
+  } else {
+    if (wasVote) edit[wasVote]--;
+    edit[dir]++;
+    edit.userVote = dir;
+  }
+  updateEditCard(editId);
+
+  // Persist
+  try {
+    if (isSameDir) {
+      await sb.from('castle_edit_user_votes').delete()
+        .eq('edit_id', editId).eq('session_id', SESSION_ID);
+      await sb.rpc('adjust_edit_votes', {
+        p_edit_id: editId,
+        p_up_delta: dir === 'up' ? -1 : 0,
+        p_down_delta: dir === 'down' ? -1 : 0,
+      });
+    } else {
+      await sb.from('castle_edit_user_votes').upsert(
+        { edit_id: editId, session_id: SESSION_ID, direction: dir },
+        { onConflict: 'edit_id,session_id' }
+      );
+      const upDelta = (dir === 'up' ? 1 : 0) + (wasVote === 'up' ? -1 : 0);
+      const downDelta = (dir === 'down' ? 1 : 0) + (wasVote === 'down' ? -1 : 0);
+      await sb.rpc('adjust_edit_votes', {
+        p_edit_id: editId,
+        p_up_delta: upDelta,
+        p_down_delta: downDelta,
+      });
+    }
+  } catch (err) {
+    console.warn('Edit vote persist error:', err);
+  }
+}
+
+// ===== EDIT LIGHTBOX (simple alert-style for edited images) =====
+function openEditLightbox(edit) {
+  // Reuse the main lightbox for preview
+  const parentLogo = LOGOS.find(l => l.id === edit.parentId);
+  document.getElementById('lightbox-img').src = edit.imageDataUrl;
+  document.getElementById('lightbox-img').alt = `AI edit`;
+  document.getElementById('lightbox-num').textContent = `✦ AI Edit`;
+  document.getElementById('lightbox-title').textContent = parentLogo ? parentLogo.label : `Logo #${edit.parentId}`;
+  document.getElementById('lb-up-count').textContent = edit.up;
+  document.getElementById('lb-down-count').textContent = edit.down;
+  document.getElementById('lb-score').textContent = (edit.up - edit.down > 0 ? '+' : '') + (edit.up - edit.down);
+  document.getElementById('lb-prev').disabled = true;
+  document.getElementById('lb-next').disabled = true;
+  document.getElementById('lightbox').hidden = false;
+  document.getElementById('lightbox-backdrop').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  lightboxId = null; // signal it's an edit lightbox
+}
+
+// ===== EDIT MODAL =====
+let editModalLogoId = null;
+let editModalImageUrl = null;
+
+function openEditModal(logoId, imageUrl) {
+  editModalLogoId = logoId;
+  editModalImageUrl = imageUrl;
+
+  const logo = LOGOS.find(l => l.id === logoId);
+  document.getElementById('edit-modal-preview').src = imageUrl;
+  document.getElementById('edit-modal-preview').alt = logo ? logo.label : '';
+  document.getElementById('edit-modal-logo-name').textContent = logo ? `#${logo.id} — ${logo.label}` : '';
+  document.getElementById('edit-prompt-input').value = '';
+  document.getElementById('edit-status').hidden = true;
+  document.getElementById('edit-status').textContent = '';
+  document.getElementById('edit-generate-btn').disabled = false;
+
+  document.getElementById('edit-modal').hidden = false;
+  document.getElementById('edit-modal-backdrop').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('edit-prompt-input').focus();
+}
+
+function closeEditModal() {
+  document.getElementById('edit-modal').hidden = true;
+  document.getElementById('edit-modal-backdrop').classList.remove('open');
+  document.body.style.overflow = '';
+  editModalLogoId = null;
+  editModalImageUrl = null;
+}
+
+async function submitEdit() {
+  const prompt = document.getElementById('edit-prompt-input').value.trim();
+  if (!prompt) {
+    document.getElementById('edit-prompt-input').focus();
+    return;
+  }
+
+  const btn = document.getElementById('edit-generate-btn');
+  const statusEl = document.getElementById('edit-status');
+  btn.disabled = true;
+  statusEl.hidden = false;
+  statusEl.className = 'edit-status';
+  statusEl.innerHTML = '<span class="spinner"></span> Queuing edit…';
+
+  try {
+    const res = await fetch(VERCEL_EDIT_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        parentLogoId: editModalLogoId,
+        sessionId: SESSION_ID,
+        prompt,
+        imageUrl: editModalImageUrl,
+      }),
+    });
+
+    const data = await res.json();
+    if (!res.ok || data.error) throw new Error(data.error || 'Failed to queue edit');
+
+    const jobId = data.jobId;
+    statusEl.innerHTML = '<span class="spinner"></span> Generating with nano banana pro… (may take ~30s)';
+
+    // Add a pending card to the grid immediately
+    addPendingEditCard(jobId, editModalLogoId, prompt);
+
+    // Close modal
+    closeEditModal();
+
+    // Poll Supabase for job completion
+    pollEditJob(jobId);
+
+  } catch (err) {
+    statusEl.className = 'edit-status error';
+    statusEl.innerHTML = `✕ ${err.message}`;
+    btn.disabled = false;
+  }
+}
+
+function addPendingEditCard(jobId, logoId, prompt) {
+  const grid = document.getElementById('logo-grid');
+  const card = document.createElement('article');
+  card.className = 'logo-card pending-edit';
+  card.id = `pending-card-${jobId}`;
+  card.setAttribute('role', 'listitem');
+  card.style.position = 'relative';
+
+  const parentLogo = LOGOS.find(l => l.id === logoId);
+  const parentLabel = parentLogo ? parentLogo.label : `Logo #${logoId}`;
+  const parentImgUrl = parentLogo
+    ? `https://raw.githubusercontent.com/opencolin/365-castle-logos/master/logos/${parentLogo.file}`
+    : '';
+
+  card.innerHTML = `
+    <span class="ai-badge">✦ Generating…</span>
+    <div class="logo-img-wrap">
+      <img class="logo-img" src="${parentImgUrl}" alt="Generating…" style="opacity:0.3" />
+    </div>
+    <div class="logo-body">
+      <p class="logo-label">${parentLabel}</p>
+      <p class="edit-prompt-tag">"${prompt}"</p>
+      <div style="display:flex;align-items:center;gap:0.4rem;margin-top:0.5rem;font-size:var(--text-xs);color:var(--color-text-muted)">
+        <span class="spinner"></span> nano banana pro is cooking…
+      </div>
+    </div>
+  `;
+
+  // Insert right after parent card
+  const parentCard = document.getElementById(`card-${logoId}`);
+  if (parentCard && parentCard.nextSibling) {
+    grid.insertBefore(card, parentCard.nextSibling);
+  } else {
+    grid.prepend(card);
+  }
+}
+
+function pollEditJob(jobId) {
+  let attempts = 0;
+  const maxAttempts = 60; // 3 min max
+
+  const intervalId = setInterval(async () => {
+    attempts++;
+    if (attempts > maxAttempts) {
+      clearInterval(intervalId);
+      removePendingCard(jobId);
+      return;
+    }
+
+    try {
+      const { data, error } = await sb
+        .from('castle_edits')
+        .select('id, parent_logo_id, prompt, image_data_url, up_votes, down_votes, status, error_msg')
+        .eq('id', jobId)
+        .single();
+
+      if (error) throw error;
+
+      if (data.status === 'done' && data.image_data_url) {
+        clearInterval(intervalId);
+        removePendingCard(jobId);
+
+        // Add to editCards and render
+        editCards[data.id] = {
+          id: data.id,
+          parentId: data.parent_logo_id,
+          prompt: data.prompt,
+          imageDataUrl: data.image_data_url,
+          up: data.up_votes || 0,
+          down: data.down_votes || 0,
+          userVote: null,
+          status: 'done',
+        };
+        renderEditCards();
+
+      } else if (data.status === 'error') {
+        clearInterval(intervalId);
+        removePendingCard(jobId, data.error_msg);
+      }
+    } catch (err) {
+      console.warn('Poll error:', err);
+    }
+  }, 3000);
+
+  editPolls[jobId] = intervalId;
+}
+
+function removePendingCard(jobId, errorMsg) {
+  const card = document.getElementById(`pending-card-${jobId}`);
+  if (!card) return;
+  if (errorMsg) {
+    card.querySelector('.logo-body').innerHTML += `<p style="color:var(--color-down);font-size:var(--text-xs);margin-top:0.4rem">✕ ${errorMsg}</p>`;
+    card.classList.remove('pending-edit');
+    setTimeout(() => card.remove(), 5000);
+  } else {
+    card.remove();
+  }
+}
+
+// ===== WIRE UP EDIT BUTTONS ON ORIGINAL CARDS =====
+// Patch createCard to include Edit button
+const _origCreateCard = createCard;
+// Override createCard to inject Edit button
+function createCard(logo, idx) {
+  const card = _origCreateCard(logo, idx);
+  const logoBody = card.querySelector('.logo-body');
+  const editBtn = document.createElement('button');
+  editBtn.className = 'edit-btn';
+  editBtn.dataset.logoId = logo.id;
+  editBtn.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit`;
+  editBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    const imgUrl = `https://raw.githubusercontent.com/opencolin/365-castle-logos/master/logos/${logo.file}`;
+    openEditModal(logo.id, imgUrl);
+  });
+  logoBody.appendChild(editBtn);
+  return card;
+}
+
+// ===== EDIT MODAL EVENT LISTENERS =====
+document.getElementById('edit-modal-close').addEventListener('click', closeEditModal);
+document.getElementById('edit-modal-backdrop').addEventListener('click', closeEditModal);
+document.getElementById('edit-generate-btn').addEventListener('click', submitEdit);
+document.getElementById('edit-prompt-input').addEventListener('keydown', e => {
+  if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) submitEdit();
+});
+
+// Quick prompt buttons
+document.querySelectorAll('.edit-quick-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.getElementById('edit-prompt-input').value = btn.dataset.prompt;
+    document.getElementById('edit-prompt-input').focus();
+  });
+});
+
+// Close edit modal on Escape
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && !document.getElementById('edit-modal').hidden) {
+    closeEditModal();
+  }
+});
+
+// ===== LOAD EDITS ON INIT =====
+loadEditsFromSupabase();

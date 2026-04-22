@@ -1,0 +1,9 @@
+{
+  "user_description": "Checking a sample of castle_votes rows and the RPC function definition",
+  "tool_name": "execute_sql",
+  "source_id": "supabase",
+  "arguments": {
+    "project_id": "mrnccntqmkxjazznejfc",
+    "query": "SELECT logo_id, up_votes, down_votes FROM castle_votes ORDER BY logo_id LIMIT 10;"
+  }
+}

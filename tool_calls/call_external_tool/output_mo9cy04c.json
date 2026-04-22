@@ -1,0 +1,680 @@
+{
+  "tool": "get_logs",
+  "result": {
+    "result": {
+      "result": [
+        {
+          "event_message": "GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?select=logo_id%2Cdirection&session_id=eq.2a92998c-19a1-4213-ac9c-499040082d2d | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "9eb78a10-1f5a-416f-9392-90c535ab31ea",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "GET",
+          "path": "/rest/v1/castle_user_votes",
+          "status_code": 200,
+          "timestamp": 1776820299611000
+        },
+        {
+          "event_message": "OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?select=logo_id%2Cdirection&session_id=eq.2a92998c-19a1-4213-ac9c-499040082d2d | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "6b94b376-977c-448a-9019-6e2e60c160c9",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "OPTIONS",
+          "path": "/rest/v1/castle_user_votes",
+          "status_code": 200,
+          "timestamp": 1776820299592000
+        },
+        {
+          "event_message": "GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_votes?select=logo_id%2Cup_votes%2Cdown_votes | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "b0d16f14-3539-4646-adfa-fa87ccb441b9",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "GET",
+          "path": "/rest/v1/castle_votes",
+          "status_code": 200,
+          "timestamp": 1776820299537000
+        },
+        {
+          "event_message": "POST | 204 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/rpc/adjust_votes | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "170152c8-b673-471b-b5d7-69eac15db3e9",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "POST",
+          "path": "/rest/v1/rpc/adjust_votes",
+          "status_code": 204,
+          "timestamp": 1776820298994000
+        },
+        {
+          "event_message": "DELETE | 204 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?logo_id=eq.4&session_id=eq.ace23b36-bd6a-42ed-86d4-abbcc59b1283 | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "8fe672cd-19e8-4acb-bf74-51a1feb74d01",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "DELETE",
+          "path": "/rest/v1/castle_user_votes",
+          "status_code": 204,
+          "timestamp": 1776820298941000
+        },
+        {
+          "event_message": "OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?logo_id=eq.4&session_id=eq.ace23b36-bd6a-42ed-86d4-abbcc59b1283 | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "8b9f43d8-456d-47c9-9e2f-03b55d7d185c",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "OPTIONS",
+          "path": "/rest/v1/castle_user_votes",
+          "status_code": 200,
+          "timestamp": 1776820298895000
+        },
+        {
+          "event_message": "GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?select=logo_id%2Cdirection&session_id=eq.ace23b36-bd6a-42ed-86d4-abbcc59b1283 | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "f315fb38-4220-4875-9b63-4019beda4405",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "GET",
+          "path": "/rest/v1/castle_user_votes",
+          "status_code": 200,
+          "timestamp": 1776820297346000
+        },
+        {
+          "event_message": "OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?select=logo_id%2Cdirection&session_id=eq.ace23b36-bd6a-42ed-86d4-abbcc59b1283 | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "4b569d74-8da7-46ae-8ecb-22719324f1df",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "OPTIONS",
+          "path": "/rest/v1/castle_user_votes",
+          "status_code": 200,
+          "timestamp": 1776820297326000
+        },
+        {
+          "event_message": "GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_votes?select=logo_id%2Cup_votes%2Cdown_votes | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "d41b72d8-e375-41a0-8c5f-da31051262dc",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "GET",
+          "path": "/rest/v1/castle_votes",
+          "status_code": 200,
+          "timestamp": 1776820297267000
+        },
+        {
+          "event_message": "GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?select=logo_id%2Cdirection&session_id=eq.1294c80a-9f1c-46e8-b4f9-4fee5d90e536 | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "7c6a9d16-9f25-41f2-b8e9-3d52354fb096",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "GET",
+          "path": "/rest/v1/castle_user_votes",
+          "status_code": 200,
+          "timestamp": 1776820291282000
+        },
+        {
+          "event_message": "OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?select=logo_id%2Cdirection&session_id=eq.1294c80a-9f1c-46e8-b4f9-4fee5d90e536 | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "3aff914e-94e0-4f60-ba6a-6ca3e4fe3d79",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "OPTIONS",
+          "path": "/rest/v1/castle_user_votes",
+          "status_code": 200,
+          "timestamp": 1776820291264000
+        },
+        {
+          "event_message": "GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_votes?select=logo_id%2Cup_votes%2Cdown_votes | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "4fc930f7-2182-4a88-9648-e3bbf3652f07",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "GET",
+          "path": "/rest/v1/castle_votes",
+          "status_code": 200,
+          "timestamp": 1776820291208000
+        },
+        {
+          "event_message": "POST | 204 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/rpc/adjust_votes | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "586e432e-5e55-4f36-be34-c7bdc21ab5cf",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "POST",
+          "path": "/rest/v1/rpc/adjust_votes",
+          "status_code": 204,
+          "timestamp": 1776820281869000
+        },
+        {
+          "event_message": "DELETE | 204 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?logo_id=eq.24&session_id=eq.04f2a89f-3321-41e4-8b8e-f60d7ef0264a | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "a463cef5-23ba-4e31-8697-29345aa818ac",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "DELETE",
+          "path": "/rest/v1/castle_user_votes",
+          "status_code": 204,
+          "timestamp": 1776820281821000
+        },
+        {
+          "event_message": "OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?logo_id=eq.24&session_id=eq.04f2a89f-3321-41e4-8b8e-f60d7ef0264a | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "3865ce69-fa7e-4155-b09f-f508021f98bb",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "OPTIONS",
+          "path": "/rest/v1/castle_user_votes",
+          "status_code": 200,
+          "timestamp": 1776820281781000
+        },
+        {
+          "event_message": "POST | 204 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/rpc/adjust_votes | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "0ec3a51e-8095-47a3-b699-49da719854a5",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "POST",
+          "path": "/rest/v1/rpc/adjust_votes",
+          "status_code": 204,
+          "timestamp": 1776820272709000
+        },
+        {
+          "event_message": "DELETE | 204 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?logo_id=eq.21&session_id=eq.04f2a89f-3321-41e4-8b8e-f60d7ef0264a | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "78c1faa1-d650-41f7-890d-c983a9fc3b9d",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "DELETE",
+          "path": "/rest/v1/castle_user_votes",
+          "status_code": 204,
+          "timestamp": 1776820272657000
+        },
+        {
+          "event_message": "OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?logo_id=eq.21&session_id=eq.04f2a89f-3321-41e4-8b8e-f60d7ef0264a | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "d335741e-df71-4b40-ad40-75c347c171fc",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "OPTIONS",
+          "path": "/rest/v1/castle_user_votes",
+          "status_code": 200,
+          "timestamp": 1776820272639000
+        },
+        {
+          "event_message": "POST | 204 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/rpc/adjust_votes | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "714014f2-fa26-4274-9c7b-c65a124e7199",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "POST",
+          "path": "/rest/v1/rpc/adjust_votes",
+          "status_code": 204,
+          "timestamp": 1776820268083000
+        },
+        {
+          "event_message": "DELETE | 204 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?logo_id=eq.14&session_id=eq.04f2a89f-3321-41e4-8b8e-f60d7ef0264a | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "48eaab52-2181-47e6-b1d0-66b648e5fc84",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "DELETE",
+          "path": "/rest/v1/castle_user_votes",
+          "status_code": 204,
+          "timestamp": 1776820268025000
+        },
+        {
+          "event_message": "OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?logo_id=eq.14&session_id=eq.04f2a89f-3321-41e4-8b8e-f60d7ef0264a | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "f5036585-8b03-4f5c-846e-dede3407c91c",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "OPTIONS",
+          "path": "/rest/v1/castle_user_votes",
+          "status_code": 200,
+          "timestamp": 1776820268006000
+        },
+        {
+          "event_message": "POST | 204 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/rpc/adjust_votes | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "10f788ee-dc8c-432d-ae12-b89b4a488fa3",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "POST",
+          "path": "/rest/v1/rpc/adjust_votes",
+          "status_code": 204,
+          "timestamp": 1776820263794000
+        },
+        {
+          "event_message": "DELETE | 204 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?logo_id=eq.11&session_id=eq.04f2a89f-3321-41e4-8b8e-f60d7ef0264a | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "be890452-879e-4f3e-97ce-71af82c26c6a",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "DELETE",
+          "path": "/rest/v1/castle_user_votes",
+          "status_code": 204,
+          "timestamp": 1776820263740000
+        },
+        {
+          "event_message": "OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?logo_id=eq.11&session_id=eq.04f2a89f-3321-41e4-8b8e-f60d7ef0264a | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "1f6f87bb-5a8c-4ab6-b7bf-58d27c4e855d",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "OPTIONS",
+          "path": "/rest/v1/castle_user_votes",
+          "status_code": 200,
+          "timestamp": 1776820263720000
+        },
+        {
+          "event_message": "POST | 204 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/rpc/adjust_votes | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "d48d2366-272f-4f9d-a273-3a39cc9401ae",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "POST",
+          "path": "/rest/v1/rpc/adjust_votes",
+          "status_code": 204,
+          "timestamp": 1776820252004000
+        },
+        {
+          "event_message": "DELETE | 204 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?logo_id=eq.7&session_id=eq.04f2a89f-3321-41e4-8b8e-f60d7ef0264a | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "e07573ba-04ae-4340-a5e8-80115ee3d836",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "DELETE",
+          "path": "/rest/v1/castle_user_votes",
+          "status_code": 204,
+          "timestamp": 1776820251951000
+        },
+        {
+          "event_message": "OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?logo_id=eq.7&session_id=eq.04f2a89f-3321-41e4-8b8e-f60d7ef0264a | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "9f1a4718-c0b4-4c4d-9b6b-ffed49c42e5c",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "OPTIONS",
+          "path": "/rest/v1/castle_user_votes",
+          "status_code": 200,
+          "timestamp": 1776820251928000
+        },
+        {
+          "event_message": "POST | 204 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/rpc/adjust_votes | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "c1debbf2-6d9e-4749-a36f-a33f38d5fbee",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "POST",
+          "path": "/rest/v1/rpc/adjust_votes",
+          "status_code": 204,
+          "timestamp": 1776820250918000
+        },
+        {
+          "event_message": "DELETE | 204 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?logo_id=eq.6&session_id=eq.04f2a89f-3321-41e4-8b8e-f60d7ef0264a | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "faeb97ab-2785-4c40-8910-ac8b3b3ee611",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "DELETE",
+          "path": "/rest/v1/castle_user_votes",
+          "status_code": 204,
+          "timestamp": 1776820250866000
+        },
+        {
+          "event_message": "OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?logo_id=eq.6&session_id=eq.04f2a89f-3321-41e4-8b8e-f60d7ef0264a | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "b71db47c-74bd-45bf-b40c-63a59143273d",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "OPTIONS",
+          "path": "/rest/v1/castle_user_votes",
+          "status_code": 200,
+          "timestamp": 1776820250849000
+        },
+        {
+          "event_message": "POST | 204 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/rpc/adjust_votes | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "fc52dc48-a6bf-4e6e-84a4-5c3b6a16422e",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "POST",
+          "path": "/rest/v1/rpc/adjust_votes",
+          "status_code": 204,
+          "timestamp": 1776820249685000
+        },
+        {
+          "event_message": "DELETE | 204 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?logo_id=eq.8&session_id=eq.04f2a89f-3321-41e4-8b8e-f60d7ef0264a | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "de80f8e4-a248-4f95-964c-c633492beecc",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "DELETE",
+          "path": "/rest/v1/castle_user_votes",
+          "status_code": 204,
+          "timestamp": 1776820249625000
+        },
+        {
+          "event_message": "OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?logo_id=eq.8&session_id=eq.04f2a89f-3321-41e4-8b8e-f60d7ef0264a | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "4c944d5d-fe02-47e6-98a0-d4a506857ee8",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "OPTIONS",
+          "path": "/rest/v1/castle_user_votes",
+          "status_code": 200,
+          "timestamp": 1776820249608000
+        },
+        {
+          "event_message": "POST | 204 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/rpc/adjust_votes | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "d44672b8-23cd-4372-aa81-d70219faa531",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "POST",
+          "path": "/rest/v1/rpc/adjust_votes",
+          "status_code": 204,
+          "timestamp": 1776820246512000
+        },
+        {
+          "event_message": "OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/rpc/adjust_votes | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "1916ef3c-3631-4804-a58f-cd49d1436757",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "OPTIONS",
+          "path": "/rest/v1/rpc/adjust_votes",
+          "status_code": 200,
+          "timestamp": 1776820246491000
+        },
+        {
+          "event_message": "DELETE | 204 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?logo_id=eq.2&session_id=eq.04f2a89f-3321-41e4-8b8e-f60d7ef0264a | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "8ffc9025-3c29-4893-8343-95867f5440f5",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "DELETE",
+          "path": "/rest/v1/castle_user_votes",
+          "status_code": 204,
+          "timestamp": 1776820246302000
+        },
+        {
+          "event_message": "OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?logo_id=eq.2&session_id=eq.04f2a89f-3321-41e4-8b8e-f60d7ef0264a | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "5097f4db-fc17-4ddd-afda-bc2ca082f6e2",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "OPTIONS",
+          "path": "/rest/v1/castle_user_votes",
+          "status_code": 200,
+          "timestamp": 1776820246284000
+        },
+        {
+          "event_message": "GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?select=logo_id%2Cdirection&session_id=eq.04f2a89f-3321-41e4-8b8e-f60d7ef0264a | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "4b3ebf06-5bc6-4252-8ef5-39fd32ccb9a6",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "GET",
+          "path": "/rest/v1/castle_user_votes",
+          "status_code": 200,
+          "timestamp": 1776820241104000
+        },
+        {
+          "event_message": "OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?select=logo_id%2Cdirection&session_id=eq.04f2a89f-3321-41e4-8b8e-f60d7ef0264a | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "6c34f536-4909-4380-aa0b-d763d0ff3b32",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "OPTIONS",
+          "path": "/rest/v1/castle_user_votes",
+          "status_code": 200,
+          "timestamp": 1776820241084000
+        },
+        {
+          "event_message": "GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_votes?select=logo_id%2Cup_votes%2Cdown_votes | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "7c1340b0-6e87-4fe2-9c70-46c30d46b06b",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "GET",
+          "path": "/rest/v1/castle_votes",
+          "status_code": 200,
+          "timestamp": 1776820240954000
+        },
+        {
+          "event_message": "OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_votes?select=logo_id%2Cup_votes%2Cdown_votes | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "9068ba36-e758-4d5b-a89e-cbaa84b9c5da",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "OPTIONS",
+          "path": "/rest/v1/castle_votes",
+          "status_code": 200,
+          "timestamp": 1776820240817000
+        },
+        {
+          "event_message": "GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+          "id": "fcdc8bf0-0aed-4c08-af01-de9c3d3eb632",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "GET",
+          "path": "/rest/v1/events",
+          "status_code": 200,
+          "timestamp": 1776814240452000
+        },
+        {
+          "event_message": "OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+          "id": "4374b001-a675-4b5a-9c26-88a60f9b32ce",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "OPTIONS",
+          "path": "/rest/v1/events",
+          "status_code": 200,
+          "timestamp": 1776814240390000
+        },
+        {
+          "event_message": "GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+          "id": "c73c9c37-296d-4640-8fbb-9933ed695fbd",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "GET",
+          "path": "/rest/v1/events",
+          "status_code": 200,
+          "timestamp": 1776814190382000
+        },
+        {
+          "event_message": "OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+          "id": "427116ac-9882-40a9-bba8-1d66c24255df",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "OPTIONS",
+          "path": "/rest/v1/events",
+          "status_code": 200,
+          "timestamp": 1776814190229000
+        },
+        {
+          "event_message": "GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+          "id": "158661d7-85c3-4c0b-9aea-18222b640fed",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "GET",
+          "path": "/rest/v1/events",
+          "status_code": 200,
+          "timestamp": 1776802443286000
+        },
+        {
+          "event_message": "OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+          "id": "6db199e3-de79-4bbc-97d0-7b7376ab959b",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "OPTIONS",
+          "path": "/rest/v1/events",
+          "status_code": 200,
+          "timestamp": 1776802443122000
+        },
+        {
+          "event_message": "GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (iPhone; CPU iPhone OS 26_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/145.0.7632.117 Mobile/15E148 Safari/604.1",
+          "id": "aeacbaf0-f38c-4dc9-8588-86323b0b11ae",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "GET",
+          "path": "/rest/v1/events",
+          "status_code": 200,
+          "timestamp": 1776784829089000
+        },
+        {
+          "event_message": "OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (iPhone; CPU iPhone OS 26_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/145.0.7632.117 Mobile/15E148 Safari/604.1",
+          "id": "00b2a7ea-d970-4d4c-875d-4f712cacdfbf",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "OPTIONS",
+          "path": "/rest/v1/events",
+          "status_code": 200,
+          "timestamp": 1776784828995000
+        },
+        {
+          "event_message": "GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "5b970726-89ab-49fa-923e-4dd3886f83c9",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "GET",
+          "path": "/rest/v1/events",
+          "status_code": 200,
+          "timestamp": 1776777601724000
+        },
+        {
+          "event_message": "OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+          "id": "c5033088-93ed-431d-b0c9-cbf9144cb095",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "OPTIONS",
+          "path": "/rest/v1/events",
+          "status_code": 200,
+          "timestamp": 1776777601508000
+        },
+        {
+          "event_message": "GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+          "id": "4aa1a26d-e9f2-4259-9e03-c74e959cfdb0",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "GET",
+          "path": "/rest/v1/events",
+          "status_code": 200,
+          "timestamp": 1776776403805000
+        },
+        {
+          "event_message": "OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+          "id": "9670a135-638a-4376-a3f0-d98bd471b085",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "OPTIONS",
+          "path": "/rest/v1/events",
+          "status_code": 200,
+          "timestamp": 1776776403260000
+        },
+        {
+          "event_message": "GET | 401 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | null",
+          "id": "89cf4dd2-0375-4c84-aca7-99f5dd8dba83",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "GET",
+          "path": "/rest/v1/events",
+          "status_code": 401,
+          "timestamp": 1776761733798000
+        },
+        {
+          "event_message": "OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+          "id": "9d5198e4-d6a8-4429-b19c-4bcd14b920d0",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "OPTIONS",
+          "path": "/rest/v1/events",
+          "status_code": 200,
+          "timestamp": 1776761729076000
+        },
+        {
+          "event_message": "GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+          "id": "752daf0c-3ca0-41c1-9106-8e573640fd30",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "GET",
+          "path": "/rest/v1/events",
+          "status_code": 200,
+          "timestamp": 1776761695684000
+        },
+        {
+          "event_message": "OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+          "id": "f7ad6c80-b971-42df-8769-846b061fb514",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "OPTIONS",
+          "path": "/rest/v1/events",
+          "status_code": 200,
+          "timestamp": 1776761695484000
+        },
+        {
+          "event_message": "OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+          "id": "e8905852-b6e7-4d9d-8c9b-0a1d12987ce2",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "OPTIONS",
+          "path": "/rest/v1/events",
+          "status_code": 200,
+          "timestamp": 1776758825520000
+        },
+        {
+          "event_message": "GET | 401 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | null",
+          "id": "22bb88a8-7ec2-46b5-8009-385a89420d75",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "GET",
+          "path": "/rest/v1/events",
+          "status_code": 401,
+          "timestamp": 1776754941341000
+        },
+        {
+          "event_message": "OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+          "id": "6a60bf29-e8cf-49c4-aa3c-b88ec6497021",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "OPTIONS",
+          "path": "/rest/v1/events",
+          "status_code": 200,
+          "timestamp": 1776754934345000
+        },
+        {
+          "event_message": "GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+          "id": "81fa5450-7891-4ccb-b686-dcc7e05444b7",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "GET",
+          "path": "/rest/v1/events",
+          "status_code": 200,
+          "timestamp": 1776754903737000
+        },
+        {
+          "event_message": "OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+          "id": "ef8a8756-316f-429c-8a69-8777529a02c8",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "OPTIONS",
+          "path": "/rest/v1/events",
+          "status_code": 200,
+          "timestamp": 1776754903418000
+        },
+        {
+          "event_message": "GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+          "id": "8cd754de-7a7f-4cb4-b835-58b4a055352c",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "GET",
+          "path": "/rest/v1/events",
+          "status_code": 200,
+          "timestamp": 1776752714492000
+        },
+        {
+          "event_message": "OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+          "id": "50a6693a-1272-4859-b1dc-bf9ce9c1c6eb",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "OPTIONS",
+          "path": "/rest/v1/events",
+          "status_code": 200,
+          "timestamp": 1776752714214000
+        },
+        {
+          "event_message": "GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
+          "id": "65546313-6330-4128-9671-e2d517bfd9be",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "GET",
+          "path": "/rest/v1/events",
+          "status_code": 200,
+          "timestamp": 1776749387865000
+        },
+        {
+          "event_message": "OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
+          "id": "3d497426-e46a-4aa6-b4dd-750289fb367a",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "OPTIONS",
+          "path": "/rest/v1/events",
+          "status_code": 200,
+          "timestamp": 1776749387817000
+        },
+        {
+          "event_message": "GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
+          "id": "33cfab2b-87f1-42d5-ab2a-756c7fcd6c7e",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "GET",
+          "path": "/rest/v1/events",
+          "status_code": 200,
+          "timestamp": 1776749387330000
+        },
+        {
+          "event_message": "OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
+          "id": "f1a8ba66-e25b-4415-93d7-553eb132a27d",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "OPTIONS",
+          "path": "/rest/v1/events",
+          "status_code": 200,
+          "timestamp": 1776749387195000
+        },
+        {
+          "event_message": "GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+          "id": "4895a4d5-9c96-4f9e-b9cb-eb453864c3a2",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "GET",
+          "path": "/rest/v1/events",
+          "status_code": 200,
+          "timestamp": 1776744991943000
+        },
+        {
+          "event_message": "OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+          "id": "6ec7f7e8-22e1-4197-bc4e-9dcace332241",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "OPTIONS",
+          "path": "/rest/v1/events",
+          "status_code": 200,
+          "timestamp": 1776744991757000
+        },
+        {
+          "event_message": "GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
+          "id": "734cd10c-020d-4e67-8d24-b5360bbf0986",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "GET",
+          "path": "/rest/v1/events",
+          "status_code": 200,
+          "timestamp": 1776738293928000
+        },
+        {
+          "event_message": "OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
+          "id": "7b12518f-f020-493b-a6a1-c4d5d3db6c0b",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "OPTIONS",
+          "path": "/rest/v1/events",
+          "status_code": 200,
+          "timestamp": 1776738293773000
+        },
+        {
+          "event_message": "GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+          "id": "55ede5c0-f2d1-4992-a115-e321cd8bf511",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "GET",
+          "path": "/rest/v1/events",
+          "status_code": 200,
+          "timestamp": 1776734606478000
+        },
+        {
+          "event_message": "OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+          "id": "c796642a-a460-48f9-af04-31d574413037",
+          "identifier": "mrnccntqmkxjazznejfc",
+          "method": "OPTIONS",
+          "path": "/rest/v1/events",
+          "status_code": 200,
+          "timestamp": 1776734606286000
+        }
+      ],
+      "error": null
+    }
+  },
+  "connector": "supabase",
+  "output_schema": "{result:{result:[{event_message:str\n   id:str\n   identifier:str\n   method:str\n   path:str\n   status_code:int\n   timestamp:int}]\n  error:null}}",
+  "structure": "JSON object with 1 keys: result",
+  "preview": "{\"result\":{\"result\":[{\"event_message\":\"GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?select=logo_id%2Cdirection&session_id=eq.2a92998c-19a1-4213-ac9c-499040082d2d | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"9eb78a10-1f5a-416f-9392-90c535ab31ea\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"GET\",\"path\":\"/rest/v1/castle_user_votes\",\"status_code\":200,\"timestamp\":1776820299611000},{\"event_message\":\"OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?select=logo_id%2Cdirection&session_id=eq.2a92998c-19a1-4213-ac9c-499040082d2d | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"6b94b376-977c-448a-9019-6e2e60c160c9\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"OPTIONS\",\"path\":\"/rest/v1/castle_user_votes\",\"status_code\":200,\"timestamp\":1776820299592000},{\"event_message\":\"GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_votes?select=logo_id%2Cup_votes%2Cdown_votes | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"b0d16f14-3539-4646-adfa-fa87ccb441b9\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"GET\",\"path\":\"/rest/v1/castle_votes\",\"status_code\":200,\"timestamp\":1776820299537000},{\"event_message\":\"POST | 204 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/rpc/adjust_votes | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"170152c8-b673-471b-b5d7-69eac15db3e9\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"POST\",\"path\":\"/rest/v1/rpc/adjust_votes\",\"status_code\":204,\"timestamp\":1776820298994000},{\"event_message\":\"DELETE | 204 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?logo_id=eq.4&session_id=eq.ace23b36-bd6a-42ed-86d4-abbcc59b1283 | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"8fe672cd-19e8-4acb-bf74-51a1feb74d01\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"DELETE\",\"path\":\"/rest/v1/castle_user_votes\",\"status_code\":204,\"timestamp\":1776820298941000},{\"event_message\":\"OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?logo_id=eq.4&session_id=eq.ace23b36-bd6a-42ed-86d4-abbcc59b1283 | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"8b9f43d8-456d-47c9-9e2f-03b55d7d185c\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"OPTIONS\",\"path\":\"/rest/v1/castle_user_votes\",\"status_code\":200,\"timestamp\":1776820298895000},{\"event_message\":\"GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?select=logo_id%2Cdirection&session_id=eq.ace23b36-bd6a-42ed-86d4-abbcc59b1283 | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"f315fb38-4220-4875-9b63-4019beda4405\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"GET\",\"path\":\"/rest/v1/castle_user_votes\",\"status_code\":200,\"timestamp\":1776820297346000},{\"event_message\":\"OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?select=logo_id%2Cdirection&session_id=eq.ace23b36-bd6a-42ed-86d4-abbcc59b1283 | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"4b569d74-8da7-46ae-8ecb-22719324f1df\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"OPTIONS\",\"path\":\"/rest/v1/castle_user_votes\",\"status_code\":200,\"timestamp\":1776820297326000},{\"event_message\":\"GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_votes?select=logo_id%2Cup_votes%2Cdown_votes | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"d41b72d8-e375-41a0-8c5f-da31051262dc\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"GET\",\"path\":\"/rest/v1/castle_votes\",\"status_code\":200,\"timestamp\":1776820297267000},{\"event_message\":\"GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?select=logo_id%2Cdirection&session_id=eq.1294c80a-9f1c-46e8-b4f9-4fee5d90e536 | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"7c6a9d16-9f25-41f2-b8e9-3d52354fb096\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"GET\",\"path\":\"/rest/v1/castle_user_votes\",\"status_code\":200,\"timestamp\":1776820291282000},{\"event_message\":\"OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?select=logo_id%2Cdirection&session_id=eq.1294c80a-9f1c-46e8-b4f9-4fee5d90e536 | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"3aff914e-94e0-4f60-ba6a-6ca3e4fe3d79\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"OPTIONS\",\"path\":\"/rest/v1/castle_user_votes\",\"status_code\":200,\"timestamp\":1776820291264000},{\"event_message\":\"GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_votes?select=logo_id%2Cup_votes%2Cdown_votes | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"4fc930f7-2182-4a88-9648-e3bbf3652f07\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"GET\",\"path\":\"/rest/v1/castle_votes\",\"status_code\":200,\"timestamp\":1776820291208000},{\"event_message\":\"POST | 204 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/rpc/adjust_votes | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"586e432e-5e55-4f36-be34-c7bdc21ab5cf\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"POST\",\"path\":\"/rest/v1/rpc/adjust_votes\",\"status_code\":204,\"timestamp\":1776820281869000},{\"event_message\":\"DELETE | 204 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?logo_id=eq.24&session_id=eq.04f2a89f-3321-41e4-8b8e-f60d7ef0264a | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"a463cef5-23ba-4e31-8697-29345aa818ac\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"DELETE\",\"path\":\"/rest/v1/castle_user_votes\",\"status_code\":204,\"timestamp\":1776820281821000},{\"event_message\":\"OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?logo_id=eq.24&session_id=eq.04f2a89f-3321-41e4-8b8e-f60d7ef0264a | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"3865ce69-fa7e-4155-b09f-f508021f98bb\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"OPTIONS\",\"path\":\"/rest/v1/castle_user_votes\",\"status_code\":200,\"timestamp\":1776820281781000},{\"event_message\":\"POST | 204 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/rpc/adjust_votes | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"0ec3a51e-8095-47a3-b699-49da719854a5\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"POST\",\"path\":\"/rest/v1/rpc/adjust_votes\",\"status_code\":204,\"timestamp\":1776820272709000},{\"event_message\":\"DELETE | 204 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?logo_id=eq.21&session_id=eq.04f2a89f-3321-41e4-8b8e-f60d7ef0264a | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"78c1faa1-d650-41f7-890d-c983a9fc3b9d\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"DELETE\",\"path\":\"/rest/v1/castle_user_votes\",\"status_code\":204,\"timestamp\":1776820272657000},{\"event_message\":\"OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?logo_id=eq.21&session_id=eq.04f2a89f-3321-41e4-8b8e-f60d7ef0264a | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"d335741e-df71-4b40-ad40-75c347c171fc\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"OPTIONS\",\"path\":\"/rest/v1/castle_user_votes\",\"status_code\":200,\"timestamp\":1776820272639000},{\"event_message\":\"POST | 204 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/rpc/adjust_votes | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"714014f2-fa26-4274-9c7b-c65a124e7199\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"POST\",\"path\":\"/rest/v1/rpc/adjust_votes\",\"status_code\":204,\"timestamp\":1776820268083000},{\"event_message\":\"DELETE | 204 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?logo_id=eq.14&session_id=eq.04f2a89f-3321-41e4-8b8e-f60d7ef0264a | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"48eaab52-2181-47e6-b1d0-66b648e5fc84\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"DELETE\",\"path\":\"/rest/v1/castle_user_votes\",\"status_code\":204,\"timestamp\":1776820268025000},{\"event_message\":\"OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?logo_id=eq.14&session_id=eq.04f2a89f-3321-41e4-8b8e-f60d7ef0264a | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"f5036585-8b03-4f5c-846e-dede3407c91c\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"OPTIONS\",\"path\":\"/rest/v1/castle_user_votes\",\"status_code\":200,\"timestamp\":1776820268006000},{\"event_message\":\"POST | 204 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/rpc/adjust_votes | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"10f788ee-dc8c-432d-ae12-b89b4a488fa3\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"POST\",\"path\":\"/rest/v1/rpc/adjust_votes\",\"status_code\":204,\"timestamp\":1776820263794000},{\"event_message\":\"DELETE | 204 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?logo_id=eq.11&session_id=eq.04f2a89f-3321-41e4-8b8e-f60d7ef0264a | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"be890452-879e-4f3e-97ce-71af82c26c6a\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"DELETE\",\"path\":\"/rest/v1/castle_user_votes\",\"status_code\":204,\"timestamp\":1776820263740000},{\"event_message\":\"OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?logo_id=eq.11&session_id=eq.04f2a89f-3321-41e4-8b8e-f60d7ef0264a | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"1f6f87bb-5a8c-4ab6-b7bf-58d27c4e855d\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"OPTIONS\",\"path\":\"/rest/v1/castle_user_votes\",\"status_code\":200,\"timestamp\":1776820263720000},{\"event_message\":\"POST | 204 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/rpc/adjust_votes | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"d48d2366-272f-4f9d-a273-3a39cc9401ae\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"POST\",\"path\":\"/rest/v1/rpc/adjust_votes\",\"status_code\":204,\"timestamp\":1776820252004000},{\"event_message\":\"DELETE | 204 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?logo_id=eq.7&session_id=eq.04f2a89f-3321-41e4-8b8e-f60d7ef0264a | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"e07573ba-04ae-4340-a5e8-80115ee3d836\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"DELETE\",\"path\":\"/rest/v1/castle_user_votes\",\"status_code\":204,\"timestamp\":1776820251951000},{\"event_message\":\"OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?logo_id=eq.7&session_id=eq.04f2a89f-3321-41e4-8b8e-f60d7ef0264a | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"9f1a4718-c0b4-4c4d-9b6b-ffed49c42e5c\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"OPTIONS\",\"path\":\"/rest/v1/castle_user_votes\",\"status_code\":200,\"timestamp\":1776820251928000},{\"event_message\":\"POST | 204 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/rpc/adjust_votes | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"c1debbf2-6d9e-4749-a36f-a33f38d5fbee\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"POST\",\"path\":\"/rest/v1/rpc/adjust_votes\",\"status_code\":204,\"timestamp\":1776820250918000},{\"event_message\":\"DELETE | 204 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?logo_id=eq.6&session_id=eq.04f2a89f-3321-41e4-8b8e-f60d7ef0264a | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"faeb97ab-2785-4c40-8910-ac8b3b3ee611\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"DELETE\",\"path\":\"/rest/v1/castle_user_votes\",\"status_code\":204,\"timestamp\":1776820250866000},{\"event_message\":\"OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?logo_id=eq.6&session_id=eq.04f2a89f-3321-41e4-8b8e-f60d7ef0264a | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"b71db47c-74bd-45bf-b40c-63a59143273d\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"OPTIONS\",\"path\":\"/rest/v1/castle_user_votes\",\"status_code\":200,\"timestamp\":1776820250849000},{\"event_message\":\"POST | 204 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/rpc/adjust_votes | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"fc52dc48-a6bf-4e6e-84a4-5c3b6a16422e\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"POST\",\"path\":\"/rest/v1/rpc/adjust_votes\",\"status_code\":204,\"timestamp\":1776820249685000},{\"event_message\":\"DELETE | 204 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?logo_id=eq.8&session_id=eq.04f2a89f-3321-41e4-8b8e-f60d7ef0264a | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"de80f8e4-a248-4f95-964c-c633492beecc\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"DELETE\",\"path\":\"/rest/v1/castle_user_votes\",\"status_code\":204,\"timestamp\":1776820249625000},{\"event_message\":\"OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?logo_id=eq.8&session_id=eq.04f2a89f-3321-41e4-8b8e-f60d7ef0264a | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"4c944d5d-fe02-47e6-98a0-d4a506857ee8\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"OPTIONS\",\"path\":\"/rest/v1/castle_user_votes\",\"status_code\":200,\"timestamp\":1776820249608000},{\"event_message\":\"POST | 204 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/rpc/adjust_votes | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"d44672b8-23cd-4372-aa81-d70219faa531\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"POST\",\"path\":\"/rest/v1/rpc/adjust_votes\",\"status_code\":204,\"timestamp\":1776820246512000},{\"event_message\":\"OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/rpc/adjust_votes | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"1916ef3c-3631-4804-a58f-cd49d1436757\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"OPTIONS\",\"path\":\"/rest/v1/rpc/adjust_votes\",\"status_code\":200,\"timestamp\":1776820246491000},{\"event_message\":\"DELETE | 204 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?logo_id=eq.2&session_id=eq.04f2a89f-3321-41e4-8b8e-f60d7ef0264a | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"8ffc9025-3c29-4893-8343-95867f5440f5\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"DELETE\",\"path\":\"/rest/v1/castle_user_votes\",\"status_code\":204,\"timestamp\":1776820246302000},{\"event_message\":\"OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?logo_id=eq.2&session_id=eq.04f2a89f-3321-41e4-8b8e-f60d7ef0264a | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"5097f4db-fc17-4ddd-afda-bc2ca082f6e2\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"OPTIONS\",\"path\":\"/rest/v1/castle_user_votes\",\"status_code\":200,\"timestamp\":1776820246284000},{\"event_message\":\"GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?select=logo_id%2Cdirection&session_id=eq.04f2a89f-3321-41e4-8b8e-f60d7ef0264a | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"4b3ebf06-5bc6-4252-8ef5-39fd32ccb9a6\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"GET\",\"path\":\"/rest/v1/castle_user_votes\",\"status_code\":200,\"timestamp\":1776820241104000},{\"event_message\":\"OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_user_votes?select=logo_id%2Cdirection&session_id=eq.04f2a89f-3321-41e4-8b8e-f60d7ef0264a | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"6c34f536-4909-4380-aa0b-d763d0ff3b32\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"OPTIONS\",\"path\":\"/rest/v1/castle_user_votes\",\"status_code\":200,\"timestamp\":1776820241084000},{\"event_message\":\"GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_votes?select=logo_id%2Cup_votes%2Cdown_votes | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"7c1340b0-6e87-4fe2-9c70-46c30d46b06b\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"GET\",\"path\":\"/rest/v1/castle_votes\",\"status_code\":200,\"timestamp\":1776820240954000},{\"event_message\":\"OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/castle_votes?select=logo_id%2Cup_votes%2Cdown_votes | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"9068ba36-e758-4d5b-a89e-cbaa84b9c5da\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"OPTIONS\",\"path\":\"/rest/v1/castle_votes\",\"status_code\":200,\"timestamp\":1776820240817000},{\"event_message\":\"GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36\",\"id\":\"fcdc8bf0-0aed-4c08-af01-de9c3d3eb632\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"GET\",\"path\":\"/rest/v1/events\",\"status_code\":200,\"timestamp\":1776814240452000},{\"event_message\":\"OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36\",\"id\":\"4374b001-a675-4b5a-9c26-88a60f9b32ce\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"OPTIONS\",\"path\":\"/rest/v1/events\",\"status_code\":200,\"timestamp\":1776814240390000},{\"event_message\":\"GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36\",\"id\":\"c73c9c37-296d-4640-8fbb-9933ed695fbd\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"GET\",\"path\":\"/rest/v1/events\",\"status_code\":200,\"timestamp\":1776814190382000},{\"event_message\":\"OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36\",\"id\":\"427116ac-9882-40a9-bba8-1d66c24255df\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"OPTIONS\",\"path\":\"/rest/v1/events\",\"status_code\":200,\"timestamp\":1776814190229000},{\"event_message\":\"GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36\",\"id\":\"158661d7-85c3-4c0b-9aea-18222b640fed\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"GET\",\"path\":\"/rest/v1/events\",\"status_code\":200,\"timestamp\":1776802443286000},{\"event_message\":\"OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36\",\"id\":\"6db199e3-de79-4bbc-97d0-7b7376ab959b\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"OPTIONS\",\"path\":\"/rest/v1/events\",\"status_code\":200,\"timestamp\":1776802443122000},{\"event_message\":\"GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (iPhone; CPU iPhone OS 26_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/145.0.7632.117 Mobile/15E148 Safari/604.1\",\"id\":\"aeacbaf0-f38c-4dc9-8588-86323b0b11ae\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"GET\",\"path\":\"/rest/v1/events\",\"status_code\":200,\"timestamp\":1776784829089000},{\"event_message\":\"OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (iPhone; CPU iPhone OS 26_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/145.0.7632.117 Mobile/15E148 Safari/604.1\",\"id\":\"00b2a7ea-d970-4d4c-875d-4f712cacdfbf\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"OPTIONS\",\"path\":\"/rest/v1/events\",\"status_code\":200,\"timestamp\":1776784828995000},{\"event_message\":\"GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"5b970726-89ab-49fa-923e-4dd3886f83c9\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"GET\",\"path\":\"/rest/v1/events\",\"status_code\":200,\"timestamp\":1776777601724000},{\"event_message\":\"OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\",\"id\":\"c5033088-93ed-431d-b0c9-cbf9144cb095\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"OPTIONS\",\"path\":\"/rest/v1/events\",\"status_code\":200,\"timestamp\":1776777601508000},{\"event_message\":\"GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\",\"id\":\"4aa1a26d-e9f2-4259-9e03-c74e959cfdb0\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"GET\",\"path\":\"/rest/v1/events\",\"status_code\":200,\"timestamp\":1776776403805000},{\"event_message\":\"OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\",\"id\":\"9670a135-638a-4376-a3f0-d98bd471b085\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"OPTIONS\",\"path\":\"/rest/v1/events\",\"status_code\":200,\"timestamp\":1776776403260000},{\"event_message\":\"GET | 401 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | null\",\"id\":\"89cf4dd2-0375-4c84-aca7-99f5dd8dba83\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"GET\",\"path\":\"/rest/v1/events\",\"status_code\":401,\"timestamp\":1776761733798000},{\"event_message\":\"OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36\",\"id\":\"9d5198e4-d6a8-4429-b19c-4bcd14b920d0\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"OPTIONS\",\"path\":\"/rest/v1/events\",\"status_code\":200,\"timestamp\":1776761729076000},{\"event_message\":\"GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36\",\"id\":\"752daf0c-3ca0-41c1-9106-8e573640fd30\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"GET\",\"path\":\"/rest/v1/events\",\"status_code\":200,\"timestamp\":1776761695684000},{\"event_message\":\"OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36\",\"id\":\"f7ad6c80-b971-42df-8769-846b061fb514\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"OPTIONS\",\"path\":\"/rest/v1/events\",\"status_code\":200,\"timestamp\":1776761695484000},{\"event_message\":\"OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36\",\"id\":\"e8905852-b6e7-4d9d-8c9b-0a1d12987ce2\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"OPTIONS\",\"path\":\"/rest/v1/events\",\"status_code\":200,\"timestamp\":1776758825520000},{\"event_message\":\"GET | 401 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | null\",\"id\":\"22bb88a8-7ec2-46b5-8009-385a89420d75\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"GET\",\"path\":\"/rest/v1/events\",\"status_code\":401,\"timestamp\":1776754941341000},{\"event_message\":\"OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36\",\"id\":\"6a60bf29-e8cf-49c4-aa3c-b88ec6497021\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"OPTIONS\",\"path\":\"/rest/v1/events\",\"status_code\":200,\"timestamp\":1776754934345000},{\"event_message\":\"GET | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36\",\"id\":\"81fa5450-7891-4ccb-b686-dcc7e05444b7\",\"identifier\":\"mrnccntqmkxjazznejfc\",\"method\":\"GET\",\"path\":\"/rest/v1/events\",\"status_code\":200,\"timestamp\":1776754903737000},{\"event_message\":\"OPTIONS | 200 | https://mrnccntqmkxjazznejfc.supabase.co/rest/v1/events?select=*&order=event_date.asc | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36\",\"id\":\"ef8a8756-316f-429c-8a69-8777529a02c8\",\"identifier\":\"mrnccntqmkxjazzn...[truncated]"
+}

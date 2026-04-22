@@ -1,0 +1,24 @@
+{
+  "tool": "get_publishable_keys",
+  "result": {
+    "keys": [
+      {
+        "api_key": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1ybmNjbnRxbWt4amF6em5lamZjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUyMDA3NTksImV4cCI6MjA5MDc3Njc1OX0.T6oFTtYiFTsx6ojuogpZFXAS7tN5-dPzwvmY5V2xFGI",
+        "name": "anon",
+        "type": "legacy",
+        "disabled": false,
+        "description": "Legacy anon API key",
+        "id": "anon"
+      },
+      {
+        "api_key": "sb_publishable_iRKwVFn6z3hwBjAVdRL7gg_zJRnSiZx",
+        "name": "default",
+        "type": "publishable",
+        "disabled": false,
+        "id": "4f0b1367-309e-4f65-8d46-aff1f99d5a3f"
+      }
+    ]
+  },
+  "connector": "supabase",
+  "structure": "JSON object with 1 keys: keys"
+}

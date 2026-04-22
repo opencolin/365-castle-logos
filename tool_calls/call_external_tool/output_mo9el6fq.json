@@ -1,0 +1,8 @@
+{
+  "tool": "apply_migration",
+  "result": {
+    "success": true
+  },
+  "connector": "supabase",
+  "structure": "JSON object with 1 keys: success"
+}

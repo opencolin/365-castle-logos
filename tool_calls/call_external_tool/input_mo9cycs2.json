@@ -1,0 +1,9 @@
+{
+  "user_description": "Checking castle_user_votes for any saved rows",
+  "tool_name": "execute_sql",
+  "source_id": "supabase",
+  "arguments": {
+    "project_id": "mrnccntqmkxjazznejfc",
+    "query": "SELECT COUNT(*) as total_user_votes FROM castle_user_votes;"
+  }
+}

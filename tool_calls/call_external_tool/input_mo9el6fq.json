@@ -1,0 +1,10 @@
+{
+  "user_description": "Adding source_image_url column to castle_edits",
+  "tool_name": "apply_migration",
+  "source_id": "supabase",
+  "arguments": {
+    "project_id": "mrnccntqmkxjazznejfc",
+    "name": "add_source_image_url_to_edits",
+    "query": "ALTER TABLE castle_edits ADD COLUMN IF NOT EXISTS source_image_url TEXT;"
+  }
+}

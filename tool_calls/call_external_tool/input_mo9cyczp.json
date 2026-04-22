@@ -1,0 +1,9 @@
+{
+  "user_description": "Checking the adjust_votes RPC function definition",
+  "tool_name": "execute_sql",
+  "source_id": "supabase",
+  "arguments": {
+    "project_id": "mrnccntqmkxjazznejfc",
+    "query": "SELECT prosrc FROM pg_proc WHERE proname = 'adjust_votes';"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "tool": "list_projects",
+  "result": {
+    "projects": [
+      {
+        "id": "tjmjpnaqwggdctmcltjf",
+        "ref": "tjmjpnaqwggdctmcltjf",
+        "organization_id": "bpykcrmztmeqtutxkdhe",
+        "organization_slug": "bpykcrmztmeqtutxkdhe",
+        "name": "ClawCon-Denver",
+        "region": "us-west-2",
+        "status": "ACTIVE_HEALTHY",
+        "database": {
+          "host": "db.tjmjpnaqwggdctmcltjf.supabase.co",
+          "version": "17.6.1.063",
+          "postgres_engine": "17",
+          "release_channel": "ga"
+        },
+        "created_at": "2026-02-05T22:04:51.661098Z"
+      },
+      {
+        "id": "rvfzdkqzhtgfcjpzydcq",
+        "ref": "rvfzdkqzhtgfcjpzydcq",
+        "organization_id": "bpykcrmztmeqtutxkdhe",
+        "organization_slug": "bpykcrmztmeqtutxkdhe",
+        "name": "GoldenHour",
+        "region": "us-east-1",
+        "status": "ACTIVE_HEALTHY",
+        "database": {
+          "host": "db.rvfzdkqzhtgfcjpzydcq.supabase.co",
+          "version": "17.6.1.084",
+          "postgres_engine": "17",
+          "release_channel": "ga"
+        },
+        "created_at": "2026-03-30T07:23:20.630179Z"
+      },
+      {
+        "id": "mrnccntqmkxjazznejfc",
+        "ref": "mrnccntqmkxjazznejfc",
+        "organization_id": "bpykcrmztmeqtutxkdhe",
+        "organization_slug": "bpykcrmztmeqtutxkdhe",
+        "name": "ClawCamp",
+        "region": "us-west-2",
+        "status": "ACTIVE_HEALTHY",
+        "database": {
+          "host": "db.mrnccntqmkxjazznejfc.supabase.co",
+          "version": "17.6.1.104",
+          "postgres_engine": "17",
+          "release_channel": "ga"
+        },
+        "created_at": "2026-04-03T07:19:19.441002Z"
+      },
+      {
+        "id": "vdynxtordviqggknuija",
+        "ref": "vdynxtordviqggknuija",
+        "organization_id": "bpykcrmztmeqtutxkdhe",
+        "organization_slug": "bpykcrmztmeqtutxkdhe",
+        "name": "ixio",
+        "region": "us-east-1",
+        "status": "ACTIVE_HEALTHY",
+        "database": {
+          "host": "db.vdynxtordviqggknuija.supabase.co",
+          "version": "17.6.1.104",
+          "postgres_engine": "17",
+          "release_channel": "ga"
+        },
+        "created_at": "2026-04-18T08:07:49.831655Z"
+      }
+    ]
+  },
+  "connector": "supabase",
+  "structure": "JSON object with 1 keys: projects"
+}

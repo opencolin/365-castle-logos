@@ -1,0 +1,9 @@
+{
+  "user_description": "Checking how many rows are in castle_votes",
+  "tool_name": "execute_sql",
+  "source_id": "supabase",
+  "arguments": {
+    "project_id": "mrnccntqmkxjazznejfc",
+    "query": "SELECT COUNT(*) as row_count FROM castle_votes;"
+  }
+}

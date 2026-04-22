@@ -1,0 +1,8 @@
+{
+  "user_description": "Getting Supabase anon key",
+  "tool_name": "get_publishable_keys",
+  "source_id": "supabase",
+  "arguments": {
+    "project_id": "mrnccntqmkxjazznejfc"
+  }
+}

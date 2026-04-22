@@ -1,0 +1,9 @@
+{
+  "user_description": "Testing adjust_votes RPC directly in SQL",
+  "tool_name": "execute_sql",
+  "source_id": "supabase",
+  "arguments": {
+    "project_id": "mrnccntqmkxjazznejfc",
+    "query": "SELECT adjust_votes(1, 1, 0); SELECT logo_id, up_votes, down_votes FROM castle_votes WHERE logo_id = 1;"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "user_description": "Getting Supabase project URL and API key",
+  "tool_name": "get_project_url",
+  "source_id": "supabase",
+  "arguments": {
+    "project_id": "mrnccntqmkxjazznejfc"
+  }
+}

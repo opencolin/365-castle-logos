@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/edit.js": {
+      "runtime": "nodejs20.x"
+    }
+  }
+}

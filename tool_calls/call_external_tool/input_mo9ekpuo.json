@@ -1,0 +1,10 @@
+{
+  "user_description": "Adding job queue fields to castle_edits table",
+  "tool_name": "apply_migration",
+  "source_id": "supabase",
+  "arguments": {
+    "project_id": "mrnccntqmkxjazznejfc",
+    "name": "add_edit_job_queue_fields_v2",
+    "query": "ALTER TABLE castle_edits ADD COLUMN IF NOT EXISTS status TEXT NOT NULL DEFAULT 'pending' CHECK (status IN ('pending', 'processing', 'done', 'error'));\nALTER TABLE castle_edits ADD COLUMN IF NOT EXISTS error_msg TEXT;\nALTER TABLE castle_edits ALTER COLUMN image_data_url DROP NOT NULL;\nALTER TABLE castle_edits ALTER COLUMN image_data_url SET DEFAULT NULL;\n\nDO $$ BEGIN\n  IF NOT EXISTS (\n    SELECT 1 FROM pg_policies WHERE tablename = 'castle_edits' AND policyname = 'Public delete castle_edits'\n  ) THEN\n    CREATE POLICY \"Public delete castle_edits\" ON castle_edits FOR DELETE USING (true);\n  END IF;\nEND $$;"
+  }
+}

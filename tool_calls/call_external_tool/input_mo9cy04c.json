@@ -1,0 +1,9 @@
+{
+  "user_description": "Checking Supabase API logs for errors",
+  "tool_name": "get_logs",
+  "source_id": "supabase",
+  "arguments": {
+    "project_id": "mrnccntqmkxjazznejfc",
+    "service": "api"
+  }
+}

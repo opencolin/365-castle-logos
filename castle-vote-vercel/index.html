@@ -97,6 +97,41 @@
   </div>
   <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
 
+  <!-- ===== EDIT MODAL ===== -->
+  <div class="edit-modal" id="edit-modal" role="dialog" aria-modal="true" aria-label="AI Edit" hidden>
+    <div class="edit-modal-inner">
+      <button class="edit-modal-close" id="edit-modal-close" aria-label="Close">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="edit-modal-header">
+        <div class="edit-modal-preview-wrap">
+          <img class="edit-modal-preview" id="edit-modal-preview" src="" alt="" />
+        </div>
+        <div class="edit-modal-form">
+          <p class="edit-modal-label">AI Edit with <strong>nano banana pro</strong></p>
+          <p class="edit-modal-sub" id="edit-modal-logo-name"></p>
+          <textarea
+            class="edit-prompt-input"
+            id="edit-prompt-input"
+            rows="3"
+            placeholder="Describe your edit… e.g. Change the text to read SANDBOX everything"
+          ></textarea>
+          <div class="edit-modal-actions">
+            <button class="edit-quick-btn" data-prompt="Change all text to read SANDBOX everything, keep the same style">✦ SANDBOX everything</button>
+            <button class="edit-quick-btn" data-prompt="Remove all text from the image, keep only the castle graphic">✦ Remove text</button>
+            <button class="edit-quick-btn" data-prompt="Make the castle neon and futuristic with glowing cyan and purple">✦ Neon style</button>
+          </div>
+          <button class="edit-generate-btn" id="edit-generate-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            Generate
+          </button>
+          <div class="edit-status" id="edit-status" hidden></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="edit-modal-backdrop" id="edit-modal-backdrop"></div>
+
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
   <script src="app.js"></script>
 </body>

@@ -1,0 +1,9 @@
+{
+  "user_description": "Resetting test row in castle_votes",
+  "tool_name": "execute_sql",
+  "source_id": "supabase",
+  "arguments": {
+    "project_id": "mrnccntqmkxjazznejfc",
+    "query": "UPDATE castle_votes SET up_votes = 0, down_votes = 0 WHERE logo_id = 1;"
+  }
+}

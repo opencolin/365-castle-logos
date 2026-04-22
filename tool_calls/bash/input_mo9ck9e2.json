@@ -1,0 +1,6 @@
+{
+  "user_description": "Reading full app.js content",
+  "command": "cat /home/user/workspace/castle-vote-vercel/app.js",
+  "background": false,
+  "api_credentials": []
+}
