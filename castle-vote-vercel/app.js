@@ -1188,20 +1188,40 @@ async function submitEdit() {
       }),
     });
 
-    const data = await res.json();
-    if (!res.ok || data.error) throw new Error(data.error || 'Failed to queue edit');
-
-    const jobId = data.jobId;
     statusEl.innerHTML = '<span class="spinner"></span> Generating with nano banana pro… (may take ~30s)';
 
-    // Add a pending card to the grid immediately
-    addPendingEditCard(jobId, editModalLogoId, prompt);
+    const data = await res.json();
+    if (!res.ok || data.error) throw new Error(data.error || 'Generation failed');
 
-    // Close modal
-    closeEditModal();
+    const jobId = data.jobId;
 
-    // Poll Supabase for job completion
-    pollEditJob(jobId);
+    if (data.status === 'done') {
+      // API returned synchronously — fetch the full row from Supabase and render
+      closeEditModal();
+      const { data: row } = await sb
+        .from('castle_edits')
+        .select('id, parent_logo_id, prompt, image_data_url, up_votes, down_votes, status')
+        .eq('id', jobId)
+        .single();
+      if (row && row.image_data_url) {
+        editCards[row.id] = {
+          id: row.id,
+          parentId: row.parent_logo_id,
+          prompt: row.prompt,
+          imageDataUrl: row.image_data_url,
+          up: row.up_votes || 0,
+          down: row.down_votes || 0,
+          userVote: null,
+          status: 'done',
+        };
+        renderEditCards();
+      }
+    } else {
+      // Fallback: add pending card and poll (shouldn't normally happen)
+      addPendingEditCard(jobId, editModalLogoId, prompt);
+      closeEditModal();
+      pollEditJob(jobId);
+    }
 
   } catch (err) {
     statusEl.className = 'edit-status error';
