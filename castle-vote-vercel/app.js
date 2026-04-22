@@ -623,6 +623,19 @@ function createCard(logo, idx) {
     });
   });
 
+  // Edit button
+  const logoBody = card.querySelector('.logo-body');
+  const editBtn = document.createElement('button');
+  editBtn.className = 'edit-btn';
+  editBtn.dataset.logoId = logo.id;
+  editBtn.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit`;
+  editBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    const imgUrl = `https://raw.githubusercontent.com/opencolin/365-castle-logos/master/logos/${logo.file}`;
+    openEditModal(logo.id, imgUrl);
+  });
+  logoBody.appendChild(editBtn);
+
   return card;
 }
 
@@ -1229,26 +1242,6 @@ function removePendingCard(jobId, errorMsg) {
   } else {
     card.remove();
   }
-}
-
-// ===== WIRE UP EDIT BUTTONS ON ORIGINAL CARDS =====
-// Patch createCard to include Edit button
-const _origCreateCard = createCard;
-// Override createCard to inject Edit button
-function createCard(logo, idx) {
-  const card = _origCreateCard(logo, idx);
-  const logoBody = card.querySelector('.logo-body');
-  const editBtn = document.createElement('button');
-  editBtn.className = 'edit-btn';
-  editBtn.dataset.logoId = logo.id;
-  editBtn.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit`;
-  editBtn.addEventListener('click', e => {
-    e.stopPropagation();
-    const imgUrl = `https://raw.githubusercontent.com/opencolin/365-castle-logos/master/logos/${logo.file}`;
-    openEditModal(logo.id, imgUrl);
-  });
-  logoBody.appendChild(editBtn);
-  return card;
 }
 
 // ===== EDIT MODAL EVENT LISTENERS =====
