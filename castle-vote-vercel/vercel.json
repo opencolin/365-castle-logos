@@ -2,6 +2,9 @@
   "functions": {
     "api/edit.js": {
       "maxDuration": 60
+    },
+    "api/mint.js": {
+      "maxDuration": 60
     }
   }
 }

@@ -753,6 +753,18 @@ function createCard(logo, idx) {
   });
   logoBody.appendChild(editBtn);
 
+  // Mint button
+  const mintBtn = document.createElement('button');
+  mintBtn.className = 'mint-btn';
+  mintBtn.dataset.logoId = logo.id;
+  mintBtn.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Mint Icon`;
+  mintBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    const imgUrl = `https://raw.githubusercontent.com/opencolin/365-castle-logos/master/logos/${logo.file}`;
+    submitMint(logo.id, imgUrl, mintBtn, logo.label);
+  });
+  logoBody.appendChild(mintBtn);
+
   return card;
 }
 
@@ -986,7 +998,7 @@ async function loadEditsFromSupabase() {
   try {
     const { data, error } = await sb
       .from('castle_edits')
-      .select('id, parent_logo_id, prompt, image_data_url, up_votes, down_votes, status, created_at')
+      .select('id, parent_logo_id, prompt, image_data_url, up_votes, down_votes, status, is_mint, created_at')
       .eq('status', 'done')
       .order('created_at', { ascending: false });
 
@@ -1014,6 +1026,7 @@ async function loadEditsFromSupabase() {
         down: e.down_votes || 0,
         userVote: userVoteMap[e.id] || null,
         status: 'done',
+        isMint: e.is_mint || false,
       };
     });
 
@@ -1029,10 +1042,15 @@ function renderEditCards() {
   Object.values(editCards).forEach(edit => {
     const existingCard = document.getElementById(`edit-card-${edit.id}`);
     if (existingCard) {
-      updateEditCard(edit.id);
+      if (!edit.isMint) updateEditCard(edit.id);
       return;
     }
     if (edit.status !== 'done' || !edit.imageDataUrl) return;
+    // Route minted icons to their own renderer
+    if (edit.isMint) {
+      renderMintCard(edit);
+      return;
+    }
     const card = createEditCard(edit);
     // Insert after the parent card if possible
     const parentCard = document.getElementById(`card-${edit.parentId}`);
@@ -1554,6 +1572,99 @@ async function loadCreatedFromSupabase() {
   } catch (err) {
     console.warn('Failed to load created logos:', err);
   }
+}
+
+// ===== MINT ICON FEATURE =====
+async function submitMint(logoId, imageUrl, btn, label) {
+  if (btn.disabled) return;
+  btn.disabled = true;
+  btn.classList.add('mint-loading');
+  btn.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="spin"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> Minting…`;
+
+  try {
+    const res = await fetch('/api/mint', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ logoId, imageUrl, sessionId: SESSION_ID }),
+    });
+    const data = await res.json();
+    if (!res.ok || !data.url) throw new Error(data.error || 'Mint failed');
+
+    // Store in editCards so it persists across re-renders
+    const fakeId = `mint-local-${logoId}-${Date.now()}`;
+    editCards[fakeId] = {
+      id: fakeId,
+      parentId: logoId,
+      prompt: 'Mint Icon',
+      imageDataUrl: data.url,
+      up: 0, down: 0, userVote: null,
+      status: 'done',
+      isMint: true,
+      label,
+    };
+
+    renderMintCard(editCards[fakeId]);
+
+    // Reset button
+    btn.disabled = false;
+    btn.classList.remove('mint-loading');
+    btn.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Mint Icon`;
+  } catch (err) {
+    btn.disabled = false;
+    btn.classList.remove('mint-loading');
+    btn.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Mint Icon`;
+    // Show error inline under the button
+    const errEl = document.createElement('p');
+    errEl.style.cssText = 'color:var(--color-down);font-size:var(--text-xs);margin-top:0.3rem;text-align:center;';
+    errEl.textContent = `✕ ${err.message}`;
+    btn.parentNode.insertBefore(errEl, btn.nextSibling);
+    setTimeout(() => errEl.remove(), 5000);
+    console.error('Mint error:', err);
+  }
+}
+
+function renderMintCard(edit) {
+  const grid = document.getElementById('logo-grid');
+  if (!grid) return;
+  const existingCard = document.getElementById(`edit-card-${edit.id}`);
+  if (existingCard) return;
+
+  const parentLogo = LOGOS.find(l => l.id === edit.parentId);
+  const parentLabel = edit.label || (parentLogo ? parentLogo.label : `Logo #${edit.parentId}`);
+  const downloadName = parentLabel.replace(/[^a-z0-9]/gi, '-').toLowerCase() + '-icon.png';
+
+  const card = document.createElement('article');
+  card.className = 'logo-card mint-card';
+  card.id = `edit-card-${edit.id}`;
+  card.setAttribute('role', 'listitem');
+  card.setAttribute('aria-label', `Minted icon for ${parentLabel}`);
+  card.style.position = 'relative';
+
+  card.innerHTML = `
+    <span class="mint-badge">✦ Icon</span>
+    <div class="logo-img-wrap mint-img-wrap">
+      <img class="logo-img" src="${edit.imageDataUrl}" alt="Transparent icon for ${parentLabel}" loading="lazy" />
+    </div>
+    <div class="logo-body">
+      <p class="logo-label">${parentLabel}</p>
+      <p class="edit-prompt-tag">Transparent PNG icon</p>
+      <a class="mint-download-btn" href="${edit.imageDataUrl}" download="${downloadName}" target="_blank">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 3v13M6 11l6 6 6-6"/><path d="M3 20h18"/></svg>
+        Download PNG
+      </a>
+    </div>
+  `;
+
+  // Insert after the parent card
+  const parentCard = document.getElementById(`card-${edit.parentId}`);
+  if (parentCard && parentCard.nextSibling) {
+    grid.insertBefore(card, parentCard.nextSibling);
+  } else {
+    grid.appendChild(card);
+  }
+
+  // Scroll into view
+  card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
 // ===== LOAD EDITS ON INIT =====
